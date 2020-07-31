@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="w3ls-login box box--big">
+		<!-- form starts here -->
+		<form id="login-form" method="post" action="#">
+            {% csrf_token %}
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-user" aria-hidden="true"></i> {{request.session.user}} </label>
+				<input id="id_username" name="username" placeholder="Enter your name " required=""
+                                   type="text" class="form-control">
+			</div>
+			<div class="agile-field-txt">
+				<label>
+					<i class="fa fa-envelope" aria-hidden="true"></i> password </label>
+					<input name="password" type="password" class="form-control"
+					   placeholder="Enter your password " required="" id="myInput id_password" >
+			</div>
+			{% if form.errors %}
+				<p class=" label label-danger" style="color:red">
+					Your username and password didn't match.
+					Please try again.
+				</p>
+			{% endif %}
+			<div class="w3ls-bot">
+				<div class="form-end">
+					<input type="submit" value="LOGIN">
+				</div>
+				<div class="clearfix"></div>
+                <br/>
+                <div class="form-end">
+                    <a href="{% url 'sign_up' %}" style="background-color: #555555;padding: 15px 32px;display: inline-block;
+                    color:white;margin: 4px 2px;">Create New Account</a>
+                </div>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}

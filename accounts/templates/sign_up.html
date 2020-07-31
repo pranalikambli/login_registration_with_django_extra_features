@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="w3ls-login box box--big">
+		<!-- form starts here -->
+
+		<form id="login-form" method="post" action="#">
+            {% csrf_token %}
+			<div class="agile-field-txt">
+				<label> Username </label>
+				<input id="id_username" name="username" placeholder="Enter your name " required=""
+                                   type="text" class="form-control">
+			</div>
+			<div class="agile-field-txt">
+				<label> Email </label>
+				<input id="id_email" name="email" placeholder="Enter your email " required=""
+                                   type="text" class="form-control">
+			</div>
+			<div class="agile-field-txt">
+				<label> password </label>
+				<input name="password1" type="password" class="form-control"
+					   placeholder="Enter your password " required="" id="id_password" >
+			</div>
+            <div class="agile-field-txt">
+				<label>confirm password </label>
+				<input name="password2" type="password" class="form-control"
+					   placeholder="Enter your confirm password" required="" id="id_password" >
+			</div>
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p style="color: white">{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+			<div class="w3ls-bot">
+				<div class="form-end">
+					<input type="submit" value="Create">
+				</div>
+				<div class="clearfix"></div>
+				<br/>
+				<div class="form-end">
+                    <a style="background-color: #555555;padding: 15px 32px;display: inline-block;
+                    color:white;margin: 4px 2px;" href="{% url 'login' %}">Login</a>
+                </div>
+			</div>
+		</form>
+	</div>
+{% endblock %}
