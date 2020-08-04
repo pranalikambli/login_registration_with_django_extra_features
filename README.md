@@ -11,8 +11,8 @@ SetUp
 
 1) clone the project using git clone https://github.com/pranalikambli/login_registration_with_django_extra_features.git
 2) setup virtual environment.
-   For windows : https://techpluslifestyle.com/technology/how-to-install-django-3-on-windows/
-   For Ubuntu : https://techpluslifestyle.com/technology/how-to-install-django-3-on-ubuntu/
+   a) For windows : https://techpluslifestyle.com/technology/how-to-install-django-3-on-windows/
+   b) For Ubuntu : https://techpluslifestyle.com/technology/how-to-install-django-3-on-ubuntu/
 3) After setting up the virtual environment activate it and install the six package using pip install six
 4) migrate the database using python manage.python migrate
 
