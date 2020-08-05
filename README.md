@@ -13,7 +13,7 @@ SetUp
 2) setup virtual environment.
    a) For windows : https://techpluslifestyle.com/technology/how-to-install-django-3-on-windows/
    b) For Ubuntu : https://techpluslifestyle.com/technology/how-to-install-django-3-on-ubuntu/
-3) After setting up the virtual environment activate it and install the six package using pip install six
+3) After setting up the virtual environment activate it and install the packages in requirement.txt using pip install -r requirements.txt
 4) migrate the database using python manage.python migrate
 
 
