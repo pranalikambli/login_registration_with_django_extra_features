@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="w3ls-login box box--big">
+  <div class="body_container box box--big">
 		<!-- form starts here -->
 		<form id="login-form" method="post" action="#">
             {% csrf_token %}
 			<div class="agile-field-txt">
 				<label>
-					<i class="fa fa-user" aria-hidden="true"></i> {{request.session.user}} </label>
+					<i class="fa fa-user" aria-hidden="true"></i> username </label>
 				<input id="id_username" name="username" placeholder="Enter your name " required=""
                                    type="text" class="form-control">
 			</div>

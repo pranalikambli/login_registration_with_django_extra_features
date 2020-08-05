@@ -10,11 +10,14 @@
   <header>
     <h1>Django Registration and Login</h1>
     {% if user.is_authenticated %}
-      Welcome {{ user.username }}!
-      <a href="{% url 'logout' %}">logout</a>
+      <font style="font-size: 25px;font-weight: 600;color:#fd5c63; padding-left: 300px;">Welcome {{ user.username }}! </font>
+      <a href="{% url 'logout' %}" style="color: #2196f3;font-size: 20px;font-weight: 600;float:right">&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Logout</a>
+      <a href="{% url 'change_password' %}" style="color: #2196f3;font-size: 20px;font-weight: 600;float:right">Change Password</a>
     {% else %}
-      <a href="{% url 'login' %}" style="font-size: 25px;font-weight: 600;color:#bca0ff">login</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="{% url 'sign_up' %}" style="font-size: 25px;font-weight: 600;color:#bca0ff">Create New Account</a>
+      <a href="{% url 'login' %}" style="font-size: 25px;font-weight: 600;color:#fd5c63">login</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{% url 'sign_up' %}" style="font-size: 25px;font-weight: 600;color:#fd5c63">Create New Account</a>&nbsp;&nbsp;&nbsp;
+      <a href="{% url 'password_reset' %}" style="font-size: 25px;font-weight: 600;color:#fd5c63">Reset Password</a>
+
     {% endif %}
   </header>
   <hr>
@@ -24,7 +27,7 @@
   </main>
   <hr>
   <footer>
-    <a href="http://techpluslifestyle.com">techpluslifestyle.com</a>
+    <a href="http://techpluslifestyle.com" style="color: deepskyblue;font-size: 20px;font-weight: 600;">techpluslifestyle.com</a>
   </footer>
 </body>
 </html>

@@ -41,7 +41,7 @@ def activate(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+    except Exception as e:
         user = None
 
     if user is not None and account_activation_token.check_token(user, token):
@@ -51,4 +51,4 @@ def activate(request, uidb64, token):
         login(request, user)
         return redirect('home')
     else:
-        return render(request, 'account_activation_invalid.html')
+        return HttpResponse('Activation link is invalid!')
